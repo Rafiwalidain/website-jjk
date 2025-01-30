@@ -139,17 +139,20 @@ body {
 }
 
 /* about section */
-.about {
+.about,
+.karakter {
   padding: 7rem 7% 1.4rem;
 }
 
-.about h2 {
+.about h2,
+.karakter h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
 
-.about h2 span {
+.about h2 span,
+.karakter h2 span {
   color: var(--primary);
 }
 
@@ -180,6 +183,19 @@ body {
   font-size: 1.2rem;
   font-weight: 100;
   line-height: 1.6;
+}
+
+/* karakter section */
+.karakter h2 {
+  margin-bottom: 0.5rem;
+}
+
+.karakter p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1rem;
+  /* font-weight: 100; */
 }
 
 /* media queries */
