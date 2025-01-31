@@ -1,6 +1,6 @@
 :root {
   --primary: #c8ff01;
-  --bg: #0a0a0a;
+  --bg: #000000;
 }
 
 * {
@@ -16,7 +16,7 @@ body {
   font-family: "poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 2000px;
+  min-height: 4000px;
 }
 
 /* navbar */
@@ -56,7 +56,7 @@ body {
   color: var(--primary);
 }
 
-/* .navbar .navbar-nav a::after {
+.navbar .navbar-nav a::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
@@ -67,7 +67,7 @@ body {
 
 .navbar .navbar-nav a:hover ::after {
   transform: scaleX(1);
-} */
+}
 
 .navbar .navbar-extra a {
   color: #fff;
@@ -140,19 +140,22 @@ body {
 
 /* about section */
 .about,
-.karakter {
+.karakter,
+.kontak {
   padding: 7rem 7% 1.4rem;
 }
 
 .about h2,
-.karakter h2 {
+.karakter h2,
+.kontak h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
 
 .about h2 span,
-.karakter h2 span {
+.karakter h2 span,
+.kontak h2 span {
   color: var(--primary);
 }
 
@@ -165,7 +168,10 @@ body {
 }
 
 .about .row .about-img img {
-  width: 100%;
+  width: 90%;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 2.7rem;
 }
 
 .about .row .konten2 {
@@ -187,10 +193,12 @@ body {
 
 /* karakter section */
 .karakter h2 {
+  padding-top: 5px;
   margin-bottom: 0.5rem;
 }
 
-.karakter p {
+.karakter p,
+.kontak p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -198,12 +206,98 @@ body {
   /* font-weight: 100; */
 }
 
+.karakter .row2 {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.karakter .row2 .karakter-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.karakter .row2 .karakter-card img {
+  width: 30%;
+}
+
+.karakter .row2 .karakter-card-title {
+  margin-top: 1rem auto 0.5rem;
+}
+
+.img-thumbnail {
+  width: 50%;
+  height: auto;
+}
+
+/* kontal section */
+.kontak h2 {
+  padding-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.kontak .row3 {
+  display: flex;
+  margin-top: 2rem;
+  background-color: rgb(37, 37, 37);
+  flex-wrap: wrap;
+}
+
+.kontak .row3 .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.kontak .row3 form {
+  flex: 1 1 45rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.kontak .row3 form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid rgb(238, 238, 238);
+  padding-left: 2rem;
+}
+
+.kontak .row3 form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: white;
+}
+
+.kontak .row3 form .btn2 {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  font-weight: 550;
+  color: var(--bg);
+  background-color: var(--primary);
+  cursor: pointer;
+}
+/* kontal section end */
+
 /* media queries */
 
 /* laptop */
 @media (max-width: 1366px) {
   html {
     font-size: 75%;
+  }
+  .kontak .row3 .map {
+    height: 30rem;
+  }
+
+  .kontak .row3 form {
+    padding-top: 0;
   }
 }
 /* tablet */
@@ -263,6 +357,14 @@ body {
 
   .about .row .konten2 p {
     font-size: 1.5rem;
+  }
+
+  .karakter p {
+    font-size: 1.2rem;
+  }
+
+  .kontak .row3 .map {
+    height: 30rem;
   }
 }
 
