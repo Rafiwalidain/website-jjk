@@ -12,11 +12,15 @@
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 4000px;
+  /* min-height: 4000px; */
 }
 
 /* navbar */
@@ -146,7 +150,7 @@ body {
 }
 
 .about h2,
-.karakter h2,
+.karakter .judul,
 .kontak h2 {
   text-align: center;
   font-size: 2.6rem;
@@ -154,8 +158,9 @@ body {
 }
 
 .about h2 span,
-.karakter h2 span,
-.kontak h2 span {
+.karakter .judul span,
+.kontak h2 span,
+.credit span {
   color: var(--primary);
 }
 
@@ -192,18 +197,128 @@ body {
 }
 
 /* karakter section */
-.karakter h2 {
+/* wrapper */
+.karakter .wrapper {
+  perspective: 3000px;
+  max-width: 100%;
+  padding: 10px;
+  margin-left: 15px;
+  display: inline-block;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+}
+
+.karakter .front-page .char {
+  /* background-image: url(img/itadori.jpeg); */
+  width: 250px;
+  height: 420px;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.karakter .kartu {
+  width: 250px;
+  height: 420px;
+  flex: 1 1 250px;
+  max-width: 250px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+  border-radius: 14px;
+}
+
+.karakter .kartu:hover {
+  transform: rotateY(180deg);
+}
+
+.front-page,
+.back-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.karakter .card-info {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: rgb(228, 222, 222);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border: 4px solid var(--primary);
+  border-radius: 14px;
+  background-color: black;
+}
+
+.karakter .card-title {
+  font-style: 2rem;
+  font-weight: bold;
+}
+
+.karakter .card-content {
+  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.karakter .card-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.karakter .card-deskripsi {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.karakter .card-button {
+  background-color: var(--primary);
+  color: #000000;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.karakter .card-button:hover {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+/* .karakter .card-subtitle {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: var(--primary);
+} */
+
+.karakter .back-page {
+  background-color: var(--bg);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* .karakter h2 {
   padding-top: 5px;
   margin-bottom: 0.5rem;
 }
 
-.karakter p,
-.kontak p {
+.karakter p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
   font-size: 1rem;
-  /* font-weight: 100; */
 }
 
 .karakter .row2 {
@@ -229,12 +344,19 @@ body {
 .img-thumbnail {
   width: 50%;
   height: auto;
-}
+} */
 
 /* kontal section */
 .kontak h2 {
   padding-top: 0.5rem;
   margin-bottom: 0.3rem;
+}
+
+.kontak p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1rem;
 }
 
 .kontak .row3 {
@@ -283,7 +405,40 @@ body {
   background-color: var(--primary);
   cursor: pointer;
 }
+
 /* kontal section end */
+
+/* footer */
+footer {
+  background-color: #252323;
+  text-align: center;
+  padding: 1rem 0 2rem;
+  margin-top: 3rem;
+}
+
+footer .social {
+  padding: 1rem 0;
+}
+
+footer .sosial a {
+  color: white;
+  margin: 1rem;
+}
+
+footer .sosial a :hover,
+footer .link a :hover {
+  color: var(--primary);
+}
+
+footer .link {
+  margin-bottom: 1rem;
+}
+
+footer .link a {
+  color: white;
+  padding: 0.7rem;
+}
+/* footer end */
 
 /* media queries */
 
@@ -301,7 +456,7 @@ body {
   }
 }
 /* tablet */
-@media (max-width: 768px) {
+@media (max-width: 876px) {
   html {
     font-size: 62.5%;
   }
